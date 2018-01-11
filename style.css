@@ -1,0 +1,66 @@
+body{
+  background-image: url("img/bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+body,
+html {
+    width: 100%;
+    height: 100%;
+    font-family: "Lato";
+    color: white;
+}
+.nav-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+  font-family: 'Muli', sans-serif;
+  font-size: 3em;
+  float:none;
+}
+.navbar{
+  background-color: rgba(44, 62, 80,1.0)
+}
+.row{
+  text-align: left;
+  margin-top: 15%;
+}
+.col-6{
+  padding: 0px;
+  max-height: 100%;
+  background-color: rgba(192, 57, 43,1.0);
+  opacity: 1;
+  border: solid 2px black;
+}
+.audio{
+  background-color: black;
+}
+li{
+  list-style: none;
+}
+li:hover{
+  background-color: rgba(230, 126, 34,1.0);
+
+}
+span {
+	background: #e74c3c;
+	height: 30px;
+	margin-right: 20px;
+	text-align: center;
+	color: white;
+	width: 0;
+	display: inline-block;
+	transition: 0.2s linear;
+	opacity: 0;
+}
+
+li:hover span {
+  background-color: rgba(52, 73, 94,1.0);
+	width: 40px;
+	opacity: 1.0;
+}
+.fa{
+  margin-top: 15%;
+}
