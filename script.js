@@ -1,57 +1,72 @@
 
+window.onload = function() {
+   playSong(1);
 
 
-//var image = new Image(50, 50);
-//image.src = "ipad.jpg";
+}
 
-//ar canvas = document.getElementById("myCanvas"),
-//context2 = canvas.getContext('2d');
+////////
 
-//context2.drawImage(image, 25, 25, 150, 150);
-
-////////////Noranyi/////////?//
-
-
-
-//  function playlist(songObj){
-//      var song = [];
-//      son.push(songObj);
-//
-//  }
-//
-//
-// function song(title, artist,src){
-//     this.title = title;
-//     this.artist = artist;
-//     this.src=src;
-// }
+class Playlist{
+    constructor(playlist){
+       this.playlist = playlist;
+    }
+}
 
 
-// var Songs = [];
-// var audio=new Audio("Bruno_Mars_-_Finesse_Remix_Feat_Cardi_B.mp3");
-// var song = document.getElementById("song1");
-// Songs.push(song);
+var songsArr = [];
+
+class Song{
+    constructor(title, src){
+        this.title = title;
+        this.src = src;
 
 
+    }
 
-// var song = document.getElementsByTagName('source');
-var songs =[]
+}
+
+var links = []
+
 var song1 = document.getElementById("song1");
 var song2 = document.getElementById("song2");
 var song3 = document.getElementById("song3");
 var song4 = document.getElementById("song4");
 var song5 = document.getElementById("song5");
-var song5 = document.getElementById("song6");
+var song6 = document.getElementById("song6");
 
-
-songs.push(song1)
-songs.push(song2)
-songs.push(song3)
-songs.push(song4)
-songs.push(song5)
-songs.push(song6)
+links.push(song1);
+links.push(song2);
+links.push(song3);
+links.push(song4);
+links.push(song5);
+links.push(song6);
 
 var songTitle = document.getElementsByTagName("li");
+
+
+
+ for (var i = 0; i < links.length; i++){
+     var song = new Song(songTitle[i], links[i]);
+     songsArr.push(song);
+
+
+ }
+
+
+
+var playL = new Playlist(songsArr);
+
+
+console.log(links);
+
+///////////array of image/////////
+
+//var images = { "http://www.animatedimages.org/data/media/107/animated-dancing-image-0243.gif", "https://i.pinimg.com/originals/b3/94/69/b394692f0f68b3feee5809b72723323f.gif",
+// "https://previews.123rf.com/images/julinzy/julinzy1310/julinzy131000181/23262905-hand-sign-of-rock-paper-scissors-game-isolated-vector-on-white-background-Stock-Vector.jpg",
+//"http://moziru.com/images/rock-clipart-rock-paper-scissors-5.jpg",
+//"https://previews.123rf.com/images/julinzy/julinzy1310/julinzy131000180/23262904-hand-sign-of-rock-paper-scissors-game-isolated-vector-on-white--Stock-Photo.jpg", "https://previews.123rf.com/images/julinzy/julinzy1310/julinzy131000180/23262904-hand-sign-of-rock-paper-scissors-game-isolated-vector-on-white--Stock-Photo.jpg", "https://previews.123rf.com/images/julinzy/julinzy1310/julinzy131000180/23262904-hand-sign-of-rock-paper-scissors-game-isolated-vector-on-white--Stock-Photo.jpg"};
+
 
 
 
@@ -69,42 +84,54 @@ document.getElementById("current").innerHTML = currentSong;
 
 }
 
+function updateImage(index){
+    document.getElementById("image").scr = images[index];
+    console.log(images[index]);
+
+}
 
  function playSong(index){ // an array with total number of ids
 
-  for(var i=0; i<songs.length; i++){
-    songs[i].pause();
-    songs[i].currentTime = 0;
-    songs[i]. // Pause all ids before playing next file.
+  for(var i=0; i<links.length; i++){
+    links[i].pause();
+    links[i].currentTime = 0;
+    document.getElementById(i.toString()).className = "fa fa-play fa-lg";
+    // songs[i].
+    // Pause all ids before playing next file.
   // Set the time back to zero, else it will replay from the pause point.
   }
 
-  songs[index].play();
-  removeClass();
+// links[index].play();
+
+     playL.playlist[index].src.play();
+      document.getElementById(index.toString()).className = "fa fa-pause fa-lg";
+  // removeClass();
   var current = songTitle[index].innerText;
 
   updateSong(current);
+
+  updateImage(images[index]);
 }
 
 
 //Remove the play button when it's clicked
-function removeClass(){
-  var element = document.getElementById("i");
-   element.classList.remove("fa-play");
-}
+// function removeClass(){
+//   var element = document.getElementById("i");
+//    element.classList.remove("fa-play");
+// }
+//
+//
+// //add the pause button when music isplaying
+// function addClass(index){
+//   var element = document.getElementById("i");
+//    element.classList.add("fa-pause");
+//
+// }
 
 
-//add the pause button when music isplaying
-function addClass(index){
-  var element = document.getElementById("i");
-   element.classList.add("fa-pause");
 
-}
-
-
-
-
-function pauseSong(){
-    song.pause();
-
-}
+//
+//function pauseSong(){
+//    song.pause();
+//
+//}

@@ -8,7 +8,7 @@ html {
     width: 100%;
     height: 100%;
     font-family: "Lato";
-    color: white;
+
 }
 .nav-header {
     float: left;
@@ -16,22 +16,35 @@ html {
     width: 100%;
 }
 .navbar-brand {
+ color:green;
   font-family: 'Muli', sans-serif;
-  font-size: 3em;
+  font-size: 4em;
   float:none;
+
+}
+#main-title{
+  color: white;
 }
 .navbar{
-  background-color: rgba(44, 62, 80,1.0)
+  background-color: rgba(41, 128, 185,1.0);
+
+
 }
 .row{
+  text-overflow: ellipsis;
+  white-space:nowrap;
   text-align: left;
-  margin-top: 15%;
 }
-.col-6{
+.container{
+    margin-top:  5%;
+}
+.col-lg-6, .col-sm-6,.col-xs-12{
   padding: 0px;
-  max-height: 100%;
+  height: 100%;
   background-color: rgba(192, 57, 43,1.0);
   opacity: 1;
+  text-overflow: ellipsis;
+  white-space:nowrap;
   border: solid 2px black;
 }
 .audio{
@@ -39,6 +52,9 @@ html {
 }
 li{
   list-style: none;
+  text-overflow: ellipsis;
+  color: white;
+  white-space:nowrap;
 }
 li:hover{
   background-color: rgba(230, 126, 34,1.0);
@@ -63,4 +79,11 @@ li:hover span {
 }
 .fa{
   margin-top: 15%;
+}
+
+#dancing {
+    width: 25%;
+}
+marquee{
+    color: white;
 }
